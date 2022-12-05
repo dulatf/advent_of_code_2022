@@ -19,7 +19,7 @@ pub fn get_top_n_sum(slice: &[i64], n: usize) -> Option<i64> {
     let mut heap = std::collections::BinaryHeap::<i64>::new();
     heap.extend(slice.iter());
     let mut result = 0;
-    for i in 0..n {
+    for _ in 0..n {
         result += heap.peek()?;
         heap.pop();
     }

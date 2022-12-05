@@ -1,10 +1,12 @@
 use clap::Parser;
 use solution::Solution;
 
-mod day01;
-mod day02;
 mod solution;
 mod util;
+
+mod day01;
+mod day02;
+mod day03;
 
 #[derive(Parser, Debug)]
 struct Args {
@@ -14,8 +16,11 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let registry: Vec<Box<dyn Solution>> =
-        vec![Box::new(day01::Day01 {}), Box::new(day02::Day02 {})];
+    let registry: Vec<Box<dyn Solution>> = vec![
+        Box::new(day01::Day01 {}),
+        Box::new(day02::Day02 {}),
+        Box::new(day03::Day03 {}),
+    ];
 
     if let Some(selected_day) = args.day {
         if selected_day < 1 || selected_day > registry.len() {
