@@ -7,6 +7,7 @@ name = "advent_of_code_2022"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "simple-error",
 ]
 
 [[package]]
@@ -195,6 +196,12 @@ dependencies = [
  "linux-raw-sys",
  "windows-sys",
 ]
+
+[[package]]
+name = "simple-error"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc47a29ce97772ca5c927f75bac34866b16d64e07f330c3248e2d7226623901b"
 
 [[package]]
 name = "strsim"
