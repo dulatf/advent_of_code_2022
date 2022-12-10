@@ -47,7 +47,7 @@ fn process_line(stacks: &mut HashMap<i32, Vec<char>>, line: &str) -> Result<()> 
         parts[3].parse::<i32>().unwrap(),
         parts[5].parse::<i32>().unwrap(),
     );
-    for i in 0..num_crates {
+    for _ in 0..num_crates {
         if let Some(c) = stacks.get_mut(&source).and_then(|x| x.pop()) {
             stacks.get_mut(&dest).unwrap().push(c);
         } else {
@@ -71,14 +71,14 @@ fn process_line_part2(stacks: &mut HashMap<i32, Vec<char>>, line: &str) -> Resul
         parts[5].parse::<i32>().unwrap(),
     );
     let mut temp_stack: Vec<char> = Vec::new();
-    for i in 0..num_crates {
+    for _ in 0..num_crates {
         if let Some(c) = stacks.get_mut(&source).and_then(|x| x.pop()) {
             temp_stack.push(c);
         } else {
             return Err(Box::new(SimpleError::new("invalid instructions")));
         }
     }
-    for i in 0..num_crates {
+    for _ in 0..num_crates {
         if let Some(c) = temp_stack.pop() {
             stacks.get_mut(&dest).unwrap().push(c);
         } else {
