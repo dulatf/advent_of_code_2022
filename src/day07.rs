@@ -85,7 +85,7 @@ impl Directory {
 
 #[derive(Debug)]
 struct File {
-    pub name: String,
+    pub _name: String,
     pub size: usize,
 }
 
@@ -228,7 +228,7 @@ fn replay_commands(processed: Vec<LineType>) -> Result<Directory> {
             }
             LineType::Output(Content::File(name, size)) => {
                 cwd.files.push(File {
-                    name: name,
+                    _name: name,
                     size: size,
                 });
             }
