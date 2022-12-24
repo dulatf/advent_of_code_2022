@@ -14,6 +14,7 @@ mod day07;
 mod day08;
 mod day09;
 mod day10;
+mod day11;
 
 #[derive(Parser, Debug)]
 struct Args {
@@ -34,6 +35,7 @@ fn main() {
         Box::new(day08::Day08 {}),
         Box::new(day09::Day09 {}),
         Box::new(day10::Day10 {}),
+        Box::new(day11::Day11 {}),
     ];
 
     if let Some(selected_day) = args.day {
